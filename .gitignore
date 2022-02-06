@@ -1,0 +1,14 @@
+# IDEA files
+.idea
+
+# Node modules
+node_modules
+
+# Generated site
+public
+
+# Generated resources
+resources
+
+# Hugo build file
+.hugo_build.lock
