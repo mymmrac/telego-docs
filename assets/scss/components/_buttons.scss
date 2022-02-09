@@ -110,20 +110,20 @@ pre {
 }
 
 .btn-copy::after {
-  content: "Copy";
+  content: attr(data-copy-state);
   display: block;
   color: $color-btn-text;
 }
 
 .btn-copy:hover::after {
-  content: "Copy";
+  //content: attr(data-copy-state);
   display: block;
   color: $color-btn-text;
 }
 
 .btn-copy:focus::after,
 .btn-copy:active::after {
-  content: "Copied";
+  //content: attr(data-copy-state);
   display: block;
   color: $color-btn-text;
 }
