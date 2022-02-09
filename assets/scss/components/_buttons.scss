@@ -116,14 +116,14 @@ pre {
 }
 
 .btn-copy:hover::after {
-  //content: attr(data-copy-state);
+  // content: attr(data-copy-state);
   display: block;
   color: $color-btn-text;
 }
 
 .btn-copy:focus::after,
 .btn-copy:active::after {
-  //content: attr(data-copy-state);
+  // content: attr(data-copy-state);
   display: block;
   color: $color-btn-text;
 }
