@@ -7,7 +7,7 @@ titleAddition = "Telegram Bot API"
 description = "Telego is Telegram Bot API library for Golang with full one-to-one API implementation"
 
 ## Open Graph
-images = ["doks.png"]
+images = ["Telego-long.png"]
 ogLocale = "en_US"
 domainTLD = "mymmrac.github.io/telego-docs"
 titleHome = "Telego"
@@ -24,10 +24,10 @@ schemaAuthorTwitter = "https://twitter.com/mymmrac"
 schemaAuthorLinkedIn = "https://www.linkedin.com/in/mymmrac/"
 schemaAuthorGitHub = "https://github.com/mymmrac"
 schemaLocale = "en-US"
-schemaLogo = "logo-doks.png"
+schemaLogo = "Telego.png"
 schemaLogoWidth = 512
 schemaLogoHeight = 512
-schemaImage = "doks.png"
+schemaImage = "Telego-long.png"
 schemaImageWidth = 1280
 schemaImageHeight = 640
 schemaTwitter = "https://twitter.com/mymmrac" # TODO: Check if needed
