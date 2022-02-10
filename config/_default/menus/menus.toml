@@ -54,6 +54,16 @@ weight = 10
 #  weight = 20
 
 [[footer]]
+name = "Contact"
+url = "/contact"
+weight = 10
+
+[[footer]]
 name = "Contributors"
 url = "/contributors"
+weight = 10
+
+[[footer]]
+name = "Privacy"
+url = "/privacy-policy/"
 weight = 10
