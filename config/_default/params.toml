@@ -3,8 +3,8 @@
 ## Homepage
 title = "Telego"
 titleSeparator = "•"
-titleAddition = "Telegram Bot API"
-description = "Telego is Telegram Bot API library for Golang with full one-to-one API implementation"
+titleAddition = "Telegram Bot API Library"
+description = "Telego is Telegram Bot API library for Go with full one-to-one API implementation"
 
 ## Open Graph
 images = ["Telego-long.png"]
@@ -17,7 +17,7 @@ twitterSite = "@mymmrac" # TODO: Check if needed
 twitterCreator = "@mymmrac"
 
 ## JSON-LD
- schemaType = "Person"
+schemaType = "Person"
 schemaName = "Telego"
 schemaAuthor = "Artem Yadelskyi"
 schemaAuthorTwitter = "https://twitter.com/mymmrac"
@@ -69,20 +69,20 @@ editPage = true
 lastMod = true
 
 [options]
-  lazySizes = true
-  clipBoard = true
-  instantPage = true
-  flexSearch = true
-  darkMode = true
-  bootStrapJs = true
-  breadCrumb = true
-  highLight = true
-  kaTex = false
-  multilingualMode = false
-  docsVersioning = false
-  fullWidth = false
+lazySizes = true
+clipBoard = true
+instantPage = true
+flexSearch = true
+darkMode = true
+bootStrapJs = true
+breadCrumb = true
+highLight = true
+kaTex = false
+multilingualMode = false
+docsVersioning = false
+fullWidth = false
 
 [menu]
-  [menu.section]
-    auto = true
-    collapsibleSidebar = true # TODO: Check which is better
+[menu.section]
+auto = true
+collapsibleSidebar = true # TODO: Check which is better
