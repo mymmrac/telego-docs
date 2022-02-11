@@ -57,7 +57,7 @@ copyRight = "Copyright (c) 2022 Artem Yadelskyi"
 
 # Alert
 alert = true
-alertDismissable = false
+alertDismissable = true
 alertText = "Work In Progress"
 
 # Edit Page
