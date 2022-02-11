@@ -56,9 +56,9 @@ footer = "Powered by <a class=\"text-muted\" href=\"https://gohugo.io/\">Hugo</a
 copyRight = "Copyright (c) 2022 Artem Yadelskyi"
 
 # Alert
-alert = false
-alertDismissable = true
-alertText = "ALERT_MESSAGE"
+alert = true
+alertDismissable = false
+alertText = "Work In Progress"
 
 # Edit Page
 repoHost = "GitHub"
