@@ -5,7 +5,5 @@ Download and install Node.js (it includes npm) for your platform. Start a new Do
 Create a new site # Doks is available as a child theme, and a starter theme:
 Use the Doks child theme, if you do not plan to customize a lot, and/or need future Doks updates.</description></item><item><title>Commands</title><link>https://mymmrac.github.io/telego-docs/docs/prologue/commands/</link><pubDate>Tue, 13 Oct 2020 15:21:01 +0200</pubDate><guid>https://mymmrac.github.io/telego-docs/docs/prologue/commands/</guid><description>💡 You can change the commands in the scripts section of `./package.json`. create # Create new content for your site:
 npm run create [path] [flags] See also the Hugo docs: hugo new.
-lint # Check scripts, styles, and markdown for errors:
-npm run lint scripts # Check scripts for errors:
-npm run lint:scripts [-- --fix] styles # Check styles for errors:
-npm run lint:styles [-- --fix] markdown # Check markdown for errors:</description></item></channel></rss>
+Go test # Go code test
+package main import ( &amp;#34;fmt&amp;#34; &amp;#34;os&amp;#34; &amp;#34;github.com/mymmrac/telego&amp;#34; ) func main() { // Get Bot token from environment variables botToken := os.Getenv(&amp;#34;TOKEN&amp;#34;) // Create bot and enable debugging info // (more on configuration at /examples/configuration/main.</description></item></channel></rss>
