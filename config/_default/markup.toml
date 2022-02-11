@@ -13,17 +13,18 @@ title = true
 unsafe = true
 
 [highlight]
-codeFences = true
-guessSyntax = false
-hl_Lines = ""
-lineNoStart = 1
 lineNos = false
 lineNumbersInTable = true
-noClasses = false
+anchorLineNos = false
+lineAnchors = ""
+lineNoStart = 1
+hl_Lines = ""
 style = "dracula"
+noClasses = true
 tabWidth = 4
+guessSyntax = false
 
 [tableOfContents]
+startLevel = 2
 endLevel = 3
 ordered = false
-startLevel = 2
