@@ -1,10 +1,10 @@
 ---
 title: "Contact"
 description: "Drop an email."
-date: 2020-08-27T19:25:12+02:00
-lastmod: 2020-08-27T19:25:12+02:00
+date: 2022-02-13T10:08:40+02:00
+lastmod: 2022-02-13T10:08:40+02:00
 draft: false
 images: []
 ---
 
-{{< email user="mymmrac" domain="gmail.com" >}}
+Artem Yadelskyi - {{< email user="mymmrac" domain="gmail.com" >}}

@@ -1,8 +1,11 @@
 ---
 title: "Blog"
 description: "Telego Blog."
-date: 2020-10-06T08:49:55+00:00
-lastmod: 2020-10-06T08:49:55+00:00
+lead: ""
+date: 2022-02-13T10:07:46+02:00
+lastmod: 2022-02-13T10:07:46+02:00
 draft: false
+weight: 50
 images: []
+contributors: []
 ---

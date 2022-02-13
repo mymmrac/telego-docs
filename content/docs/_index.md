@@ -1,9 +1,14 @@
 ---
-title : "Docs"
-description: "Docs Doks."
+title: "Docs"
+description: "Docs Telego."
 lead: ""
-date: 2020-10-06T08:48:23+00:00
-lastmod: 2020-10-06T08:48:23+00:00
+date: 2022-02-13T10:10:44+02:00
+lastmod: 2022-02-13T10:10:44+02:00
 draft: false
 images: []
+menu:
+  docs:
+    parent: ""
+weight: 10
+toc: true
 ---

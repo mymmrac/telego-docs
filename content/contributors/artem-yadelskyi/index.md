@@ -1,12 +1,12 @@
 ---
 title: "Artem Yadelskyi"
 description: "Creator of Telego."
-date: 2020-10-06T08:50:45+00:00
-lastmod: 2020-10-06T08:50:45+00:00
+date: 2022-02-13T10:10:19+02:00
+lastmod: 2022-02-13T10:10:19+02:00
 draft: false
 images: []
 ---
 
-Creator of Telego.
+Creator of Telego
 
 [@mymmrac](https://github.com/mymmrac)

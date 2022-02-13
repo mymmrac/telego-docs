@@ -50,7 +50,7 @@ lqipWidth = "20x"
 smallLimit = "300"
 
 # Footer
-footer = "Powered by <a class=\"text-muted\" href=\"https://gohugo.io/\">Hugo</a>, and <a class=\"text-muted\" href=\"https://getdoks.org/\">Doks</a>"
+footer = "Powered by <a class=\"text-muted\" href=\"https://pages.github.com\">GitHub Pages</a>, <a class=\"text-muted\" href=\"https://gohugo.io\">Hugo</a>, and <a class=\"text-muted\" href=\"https://getdoks.org\">Doks</a>"
 
 # Feed
 copyRight = "Copyright (c) 2022 Artem Yadelskyi"

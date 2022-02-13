@@ -1,10 +1,10 @@
 ---
 title: "Contributors"
 description: "Telego contributors."
-date: 2020-10-06T08:50:29+00:00
-lastmod: 2020-10-06T08:50:29+00:00
+date: 2022-02-13T10:09:23+02:00
+lastmod: 2022-02-13T10:09:23+02:00
 draft: false
 images: []
 ---
 
-Telego author & contributors.
+Telego authors & contributors
