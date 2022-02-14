@@ -7,7 +7,7 @@
         <div class="col-lg-9 col-xl-8 text-center">
             <p class="lead">{{ .Params.lead | safeHTML }}</p>
             <a class="btn btn-primary btn-lg px-4 mb-2"
-               href="/docs/{{ if .Site.Params.options.docsVersioning }}{{ .Site.Params.docsVersion }}/{{ end }}prologue/introduction/"
+               href="/docs/{{ if .Site.Params.options.docsVersioning }}{{ .Site.Params.docsVersion }}/{{ end }}introduction/overview"
                role="button">
                 Get Started
             </a>
@@ -59,24 +59,24 @@
         </div>
         <div class="row justify-content-center text-center">
             <div class="col-lg-5">
-                <h2 class="h4">Low-Level 👾</h2>
+                <h2 class="h4">Low Level 👾</h2>
                 <p>
                     If you want to use bare Telegram methods and types as they are, without any helpers and utility
-                    methods, check out <a href="#">low-level</a> docs
+                    methods, check out <a href="/docs/levels/low-level">low level</a> docs
                 </p>
             </div>
             <div class="col-lg-5">
-                <h2 class="h4">Medium-Level 📻</h2>
+                <h2 class="h4">Medium Level 📻</h2>
                 <p>
                     If you want more convenient way of interaction with Telegram, but still not use all helpers that
-                    Telego provides, check out <a href="#">medium-level</a> docs
+                    Telego provides, check out <a href="/docs/levels/medium-level">medium level</a> docs
                 </p>
             </div>
             <div class="col-lg-5">
-                <h2 class="h4">High-Level 🦾</h2>
+                <h2 class="h4">High Level 🦾</h2>
                 <p>
                     If you want to use helpers, utility and `with` methods for most convenient development, check out
-                    <a href="#">high-level</a> docs
+                    <a href="/docs/levels/high-level">high level</a> docs
                 </p>
             </div>
         </div>

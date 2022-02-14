@@ -85,4 +85,4 @@ fullWidth = false
 [menu]
 [menu.section]
 auto = true
-collapsibleSidebar = true # TODO: Check which is better
+collapsibleSidebar = false
