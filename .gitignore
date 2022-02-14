@@ -1,5 +1,6 @@
 # IDEA files
 .idea
+.DS_Store
 
 # Node modules
 node_modules
