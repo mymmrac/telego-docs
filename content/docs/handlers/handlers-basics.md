@@ -1,5 +1,5 @@
 ---
-title: "General"
+title: "Handlers Basics"
 description: ""
 lead: ""
 date: 2022-02-14T22:43:12+02:00
@@ -9,7 +9,7 @@ images: []
 menu:
   docs:
     parent: "handlers"
-weight: 501
+weight: 601
 toc: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "General"
+title: "Methods Basics"
 description: ""
 lead: ""
 date: 2022-02-14T22:21:22+02:00
