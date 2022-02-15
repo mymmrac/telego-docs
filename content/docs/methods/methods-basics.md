@@ -1,7 +1,7 @@
 ---
 title: "Methods Basics"
-description: ""
-lead: ""
+description: "General idea of how to use Telego to call Telegram Bot methods."
+lead: "General idea of how to use Telego to call Telegram Bot methods."
 date: 2022-02-14T22:21:22+02:00
 lastmod: 2022-02-14T22:21:22+02:00
 draft: false
