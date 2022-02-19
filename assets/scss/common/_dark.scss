@@ -31,6 +31,10 @@ $navbar-dark-active-color:          $link-color-dark;
   color: $link-color-dark;
 }
 
+[data-dark-mode] body .external-link-icon {
+  color: $link-color-dark;
+}
+
 [data-dark-mode] body a.text-body {
   color: $body-color-dark !important;
 }

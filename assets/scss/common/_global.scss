@@ -42,6 +42,11 @@ body.docs {
   padding-top: 0 !important;
 }
 
+body .external-link-icon {
+  color: $link-color;
+  margin-left: -3px;
+}
+
 @include media-breakpoint-up(md) {
   body {
     font-size: $font-size-md;
