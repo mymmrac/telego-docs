@@ -44,8 +44,8 @@ body.docs {
 
 body .external-link-icon {
   color: $link-color;
-  margin-left: -3px;
-  margin-right: 3px;
+  margin-left: 2px;
+  margin-right: -1px;
 }
 
 @include media-breakpoint-up(md) {
