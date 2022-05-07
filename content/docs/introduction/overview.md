@@ -21,7 +21,7 @@ represented in Go code. It's also, easy-to-use and understand, because of the sa
 comments and descriptions in [godoc](https://pkg.go.dev/github.com/mymmrac/telego).
 
 Since using bare methods and types is not so convenient, Telego gives you a lot of [helpers](/docs/helpers),
-[utilities](/docs/utilities/utilities-basics/), and even [update handlers](/docs/handlers/handlers-basics/) with
+[utilities](/docs/utilities/utilities-basics), and even [update handlers](/docs/handlers/handlers-basics) with
 [predicates](/docs/handlers/predicates).
 
 ## What it can do?
