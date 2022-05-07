@@ -46,11 +46,11 @@ Import Telego packages. More about [handlers](/docs/handlers/handlers-basics) an
 
 ```go
 import (
-	"os"
+    "os"
 
-	"github.com/mymmrac/telego"
-	th "github.com/mymmrac/telego/telegohandler"
-	tu "github.com/mymmrac/telego/telegoutil"
+    "github.com/mymmrac/telego"
+    th "github.com/mymmrac/telego/telegohandler"
+    tu "github.com/mymmrac/telego/telegoutil"
 )
 ```
 
