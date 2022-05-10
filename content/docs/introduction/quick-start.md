@@ -46,6 +46,7 @@ Import Telego packages. More about [handlers](/docs/handlers/handlers-basics) an
 
 ```go
 import (
+    "fmt"
     "os"
 
     "github.com/mymmrac/telego"
@@ -119,4 +120,4 @@ will be reviewed more closely with different ways to do things.
 Most of the things you will need to know can be found in [Telegram Bot API](https://core.telegram.org/bots/api) and/or
 in these docs, so just keep exploring.
 
-You can also look at examples located [here](https://github.com/mymmrac/telego/tree/main/examples).
+You can also look at some other examples located [here](https://github.com/mymmrac/telego/tree/main/examples).
