@@ -13,3 +13,6 @@ resources
 
 # Hugo build file
 .hugo_build.lock
+
+# Binaries
+bin

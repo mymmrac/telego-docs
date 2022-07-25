@@ -13,7 +13,7 @@ on:
 
 jobs:
   test:
-    name: Tests
+    name: Linters
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,10 +25,10 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: npm ci
+        run: yarn ci
 
-      - name: Run test script
-        run: npm test
+      - name: Run linters
+        run: yarn lint
 
   analyze:
     name: CodeQL Analyze
