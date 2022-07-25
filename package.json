@@ -13,8 +13,8 @@
     "scripts": {
         "ci": "yarn install",
         "postinstall": "hugo-installer --version otherDependencies.hugo --extended --destination bin/hugo",
-        "clean": "shx rm -rf public resources",
-        "clean:install": "shx rm -rf yarn.json node_modules bin",
+        "clean": "rm -rf public resources",
+        "clean:install": "rm -rf yarn.json node_modules bin",
         "prestart": "yarn run clean",
         "prebuild": "yarn run clean",
         "dev": "bin/hugo/hugo server --buildDrafts",
@@ -36,7 +36,6 @@
         "bootstrap": "^5.2",
         "clipboard": "^2.0",
         "eslint": "^8.20",
-        "exec-bin": "^1.0.0",
         "flexsearch": "^0.7.21",
         "highlight.js": "^11.6",
         "hugo-installer": "^3.1",
@@ -49,7 +48,6 @@
         "postcss": "^8.4",
         "postcss-cli": "^9.1",
         "purgecss-whitelister": "^2.4",
-        "shx": "^0.3.4",
         "stylelint": "^14.8",
         "stylelint-config-standard-scss": "^5.0"
     },
