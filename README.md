@@ -1,9 +1,15 @@
 # Telego Docs
 
-[![CI Status](https://github.com/mymmrac/telego-docs/actions/workflows/ci.yml/badge.svg)](https://github.com/mymmrac/telego-docs/actions/workflows/ci.yml)
+[![Telego Docs](https://img.shields.io/static/v1?label=Telego&message=docs&color=8ed6fb&logo=hugo)](https://mymmrac.github.io/telego-docs)
+<br>
 [![Deploy Status](https://github.com/mymmrac/telego-docs/actions/workflows/deploy-github.yml/badge.svg)](https://github.com/mymmrac/telego-docs/actions/workflows/deploy-github.yml)
+[![CI Status](https://github.com/mymmrac/telego-docs/actions/workflows/ci.yml/badge.svg)](https://github.com/mymmrac/telego-docs/actions/workflows/ci.yml)
 
-This repository is used for docs of Telego.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mymmrac/telego/main/docs/Telego-long.png" alt="Telego logo" width="512px" style="border-radius: 12px;">
+</p>
+
+This repository is used for documentation of [Telego](https://github.com/mymmrac/telego).
 
 > :diamond_shape_with_a_dot_inside: Docs are **Work In Progress**
 
