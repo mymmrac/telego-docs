@@ -38,12 +38,12 @@ contributor = "contributors"
 blog = "/blog/:title/"
 
 [minify.tdewolff.html]
-keepWhitespace = false
+keepWhitespace = true
 
 [module]
 [module.hugoVersion]
 extended = true
-min = "0.92.1"
+min = "0.101.0"
 max = ""
 [[module.mounts]]
 source = "assets"
