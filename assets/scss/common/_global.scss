@@ -276,3 +276,11 @@ body {
         opacity: 0;
     }
 }
+
+details summary span {
+    color: $blue-300;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

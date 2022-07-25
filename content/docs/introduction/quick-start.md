@@ -7,8 +7,8 @@ lastmod: 2022-02-13T10:11:08+02:00
 draft: false
 images: []
 menu:
-  docs:
-    parent: "introduction"
+docs:
+parent: "introduction"
 weight: 102
 toc: true
 ---
@@ -61,15 +61,17 @@ options.
 ```go
 botToken := os.Getenv("TOKEN")
 
-bot, err := telego.NewBot(botToken, telego.WithDefaultLogger(true, true))
+bot, err := telego.NewBot(botToken, telego.WithDefaultDebugLogger())
 if err != nil {
     fmt.Println(err)
     os.Exit(1)
 }
 ```
 
-> It's not recommended to hardcode tokens, so environment variable
-> was used. Also, both error and debug logs were enabled.
+> Please keep in mind that default logger may expose sensitive information, use in development only.
+
+> It's not recommended to hardcode tokens, so environment variable was used.
+> Also, both error and debug logs were enabled.
 
 Get and print bot info. More about [methods](/docs/methods/methods-basics).
 
@@ -89,6 +91,7 @@ Get updates from Telegram via long pulling (not recommend, more [here](/docs/hel
 
 ```go
 updates, _ := bot.UpdatesViaLongPulling(nil)
+// ...
 defer bot.StopLongPulling()
 ```
 
@@ -96,7 +99,7 @@ Create bot handler, register new message handler and start handling updates. Mor
 [methods](docs/methods/methods-basics) and [handlers](/docs/handlers/handlers-basics).
 
 ```go
-bh := th.NewBotHandler(bot, updates)
+bh, _ := th.NewBotHandler(bot, updates)
 
 bh.HandleMessage(func(bot *telego.Bot, message telego.Message) {
     chatID := tu.ID(message.Chat.ID)
@@ -105,12 +108,65 @@ bh.HandleMessage(func(bot *telego.Bot, message telego.Message) {
     )
 })
 
-bh.Start()
 defer bh.Stop()
+// ...
+
+bh.Start()
 ```
 
 Now you are done, after starting your bot you will see debug logs of updates that came to the bot and any sent messages
 to the bot will be sent back to you.
+
+{{<details "Full Code Example">}}
+
+```go
+package main
+
+import (
+	"fmt"
+	"os"
+
+	"github.com/mymmrac/telego"
+	th "github.com/mymmrac/telego/telegohandler"
+	tu "github.com/mymmrac/telego/telegoutil"
+)
+
+func main() {
+	botToken := os.Getenv("TOKEN")
+
+	bot, err := telego.NewBot(botToken, telego.WithDefaultDebugLogger())
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	botUser, err := bot.GetMe()
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	fmt.Printf("Bot user: %+v\n", botUser)
+
+	updates, _ := bot.UpdatesViaLongPulling(nil)
+
+	bh, _ := th.NewBotHandler(bot, updates)
+
+	bh.HandleMessage(func(bot *telego.Bot, message telego.Message) {
+		chatID := tu.ID(message.Chat.ID)
+		_, _ = bot.CopyMessage(
+			tu.CopyMessage(chatID, chatID, message.MessageID),
+		)
+	})
+
+	defer bh.Stop()
+    defer bot.StopLongPulling()
+	
+	bh.Start()
+}
+```
+
+{{</details>}}
 
 ## Next steps
 
