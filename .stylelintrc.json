@@ -1,6 +1,7 @@
 {
   "extends": "stylelint-config-standard-scss",
   "rules": {
+    "indentation": 4,
     "no-empty-source": null,
     "string-quotes": "double",
     "scss/comment-no-empty": null,
