@@ -7,16 +7,16 @@ lastmod: 2022-02-13T10:11:13+02:00
 draft: false
 images: []
 menu:
-  docs:
-    parent: "introduction"
+docs:
+parent: "introduction"
 weight: 103
 toc: true
 ---
 
 ## Introduction
 
-In this tutorial you will see different parts of library used to create simple "echo" bot with more in depth explanation
-and different ways to do the same thing.
+In this tutorial, you will see different parts of a library used to create a simple "echo"
+bot with more in depth explanation and different ways to do the same thing.
 
 You will create bot, set different settings, call Telegram to get bot user, start getting updates with specified
 parameters, use helper method to get updates, handle updates in simple loop, create new bot handler, use general purpose
@@ -25,7 +25,7 @@ use `With...` methods.
 
 {{< alert icon="⚠️" text="Error handling may be missing, but I strongly recommend handling all errors." />}}
 
-For more examples visit examples folder in GitHub repo [here](https://github.com/mymmrac/telego/tree/main/examples).
+For more examples, visit examples folder in GitHub repo [here](https://github.com/mymmrac/telego/tree/main/examples).
 
 ## Setup
 
@@ -50,7 +50,7 @@ import (
 
 ## Create bot instance
 
-Get bot token and create new bot from it, also handle error.
+Get bot token and create new bots from it, also handle errors.
 
 ```go
 botToken := os.Getenv("TOKEN")
@@ -62,19 +62,20 @@ if err != nil {
 }
 ```
 
-For this tutorial lets enable debug logs by adding bot options. More
-about [configuration](/docs/introduction/configuration).
+For this tutorial, let's enable debug logs by adding bot options.
+More about [configuration](/docs/introduction/configuration).
 
 ```go
-bot, err := telego.NewBot(botToken, telego.WithDefaultLogger(true, true))
+bot, err := telego.NewBot(botToken, telego.WithDefaultDebugLogger())
 ```
 
-> Here `WithDefaultLogger` option accepts settings for default logger - `debugMode` and `printErrors` respectively.
+> Here `WithDefaultDebugLogger` is an option for default logger with `debugMode` and `printErrors` set to true.
 
 ## Get bot user
 
-Call Telegram API to get bot user ([getMe method](https://core.telegram.org/bots/api#getme) ) and print its info, also
-handle error. More about [methods](/docs/methods/methods-basics).
+Call Telegram API to get bot user ([getMe method](https://core.telegram.org/bots/api#getme)) and print its info, also
+handle error.
+More about [methods](/docs/methods/methods-basics).
 
 ```go
 botUser, err := bot.GetMe()
@@ -86,7 +87,8 @@ if err != nil {
 fmt.Printf("Bot user: %+v\n", botUser)
 ```
 
-> Good practice to check bot info before starting main bot functionality.
+> Good practice to check bot info before starting the main bot functionality.
+> This works as a kind of healthcheck (see [configuration](/docs/introduction/configuration) for more).
 
 ## Getting updates
 

@@ -16,13 +16,13 @@ toc: true
 ## Where to start?
 
 If you are a complete beginner and/or have no experience with Telegram Bots or don't know where to start, highly
-suggest first reading [Bots: An introduction for developers](https://core.telegram.org/bots)  in order to understand
-what bots can do. If you have questions about how to create/modify a bot or what is a bot token, that is also described
-in
-the introduction for developers.
+suggest first reading [Bots: An introduction for developers](https://core.telegram.org/bots) in order to understand
+what bots can do.
+If you have questions about how to create/modify a bot or what is a bot token, that is also described in the
+introduction for developers.
 
 If you are familiar with bots capabilities, but still don't know how they work, you can read at least some parts of
-[API reference](https://core.telegram.org/bots/api):
+the [API reference](https://core.telegram.org/bots/api):
 
 - [Authorizing your bot](https://core.telegram.org/bots/api#authorizing-your-bot)
 - [Making requests](https://core.telegram.org/bots/api#making-requests)
@@ -31,7 +31,8 @@ If you are familiar with bots capabilities, but still don't know how they work, 
 ## Starting with Telego
 
 For a quick start, you can follow these simple steps and at the end you will have a simple "echo" bot that sends your
-messages back to you. From that you can go further exploring Telegram bots.
+messages back to you.
+From that you can go further exploring Telegram bots.
 
 {{< alert icon="⚠️" text="Error handling may be missing, but I strongly recommend handling all errors." />}}
 
@@ -55,8 +56,8 @@ import (
 )
 ```
 
-Create a bot instance and specify optional settings. More about [configuration](/docs/introduction/configuration)
-options.
+Create a bot instance and specify optional settings.
+More about [configuration](/docs/introduction/configuration) options.
 
 ```go
 botToken := os.Getenv("TOKEN")
@@ -70,7 +71,7 @@ if err != nil {
 
 > Please keep in mind that default logger may expose sensitive information, use in development only.
 
-> It's not recommended to hardcode tokens, so environment variable was used.
+> It's not recommended to hardcode tokens, so the environment variable was used.
 > Also, both error and debug logs were enabled.
 
 Get and print bot info. More about [methods](/docs/methods/methods-basics).
@@ -85,7 +86,7 @@ if err != nil {
 fmt.Printf("Bot user: %+v\n", botUser)
 ```
 
-> If everything was properly configured you should see your bot user printed.
+> If everything was properly configured, you should see your bot user printed.
 
 Get updates from Telegram via long pulling (not recommend, more [here](/docs/helpers/updates-long-pulling)).
 
@@ -170,10 +171,11 @@ func main() {
 
 ## Next steps
 
-For more information keep reading next sections of docs, in [tutorial](/docs/introduction/tutorial) the same example
-will be reviewed more closely with different ways to do things.
+For more information, keep reading the next sections of docs. 
+In [tutorial](/docs/introduction/tutorial),
+the same example will be reviewed more closely with different ways to do things.
 
-Most of the things you will need to know can be found in [Telegram Bot API](https://core.telegram.org/bots/api) and/or
+Most of the things you will need to know can be found in a [Telegram Bot API](https://core.telegram.org/bots/api) and/or
 in these docs, so just keep exploring.
 
 You can also look at some other examples located [here](https://github.com/mymmrac/telego/tree/main/examples).
