@@ -14,3 +14,5 @@ toc: true
 ---
 
 Hmm...
+
+[Marvin's Marvellous Guide to All Things Webhook](https://core.telegram.org/bots/webhooks)
