@@ -204,3 +204,7 @@ bh.HandleMessage(func(bot *telego.Bot, message telego.Message) {
 
 > In this case `bh.HandleMessage` will match any update with non `nil` message.
 > More on specific handlers [here](/content/docs/handlers/specific-handlers.md).
+
+## Using Telegram methods
+
+...

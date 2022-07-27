@@ -171,7 +171,7 @@ func main() {
 
 ## Next steps
 
-For more information, keep reading the next sections of docs. 
+For more information, keep reading the next sections of docs.
 In [tutorial](/content/docs/introduction/tutorial.md),
 the same example will be reviewed more closely with different ways to do things.
 
