@@ -21,9 +21,10 @@ It's also, easy-to-use and understand, because of the same naming and types as d
 in [Telegram API](https://core.telegram.org/bots/api) with as small as possible differences.
 Telego provides almost all comments and descriptions in [godoc](https://pkg.go.dev/github.com/mymmrac/telego).
 
-Since using bare methods and types is not so convenient, Telego gives you a lot of [helpers](/docs/helpers),
-[utilities](/docs/utilities/utilities-basics), and even [update handlers](/docs/handlers/handlers-basics) with
-[predicates](/docs/handlers/predicates).
+Since using bare methods and types is not so convenient, Telego gives you a lot of [helpers](/content/docs/helpers),
+[utilities](/content/docs/utilities/utilities-basics.md),
+and even [update handlers](/content/docs/handlers/handlers-basics.md) with
+[predicates](/content/docs/handlers/predicates.md).
 
 ## What can it do?
 
@@ -35,24 +36,24 @@ It's even added to the official [Telegram code examples](https://core.telegram.o
 
 {{< alert icon="⚡️" text="For a quick start on your new Telegram bot." />}}
 
-[Quick Start](/docs/introduction/quick-start) for fast and easy development.
+[Quick Start](/content/docs/introduction/quick-start.md) for fast and easy development.
 
 ### Tutorial
 
 {{< alert icon="🪁" text="For a more descriptive and full tutorial of Telego." />}}
 
-[Tutorial](/docs/introduction/tutorial) for full-features overview.
+[Tutorial](/content/docs/introduction/tutorial.md) for full-features overview.
 
 ### Short explanation
 
 If you want to quickly create your first bot and don't want to know the full capabilities of Telego, visit
-[Quick Start](/docs/introduction/quick-start).
+[Quick Start](/content/docs/introduction/quick-start.md).
 
-If you want to know more, you can go to [Tutorial](/docs/introduction/tutorial) and read about different parts of Telego
-and how you can combine them.
+If you want to know more, you can go to [Tutorial](/content/docs/introduction/tutorial.md) and read about different
+parts of Telego and how you can combine them.
 An in-depth explanation of different "levels" and concepts that Telego may be informally divided is described in
-[Low Level](/docs/levels/low-level), [Medium Level](/docs/levels/medium-level), and
-[High Level](/docs/levels/high-level) respectfully.
+[Low Level](/content/docs/levels/low-level.md), [Medium Level](/content/docs/levels/medium-level.md), and
+[High Level](/content/docs/levels/high-level.md) respectfully.
 
 Fill free to build your own abstractions around Telego to fulfill your needs if plain Telego isn't enough for you.
 

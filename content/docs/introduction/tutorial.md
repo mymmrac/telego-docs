@@ -63,7 +63,7 @@ if err != nil {
 ```
 
 For this tutorial, let's enable debug logs by adding bot options.
-More about [configuration](/docs/introduction/configuration).
+More about [configuration](/content/docs/introduction/configuration.md).
 
 ```go
 bot, err := telego.NewBot(botToken, telego.WithDefaultDebugLogger())
@@ -75,7 +75,7 @@ bot, err := telego.NewBot(botToken, telego.WithDefaultDebugLogger())
 
 Call Telegram API to get bot user ([getMe method](https://core.telegram.org/bots/api#getme)) and print its info, also
 handle error.
-More about [methods](/docs/methods/methods-basics).
+More about [methods](/content/docs/methods/methods-basics.md).
 
 ```go
 botUser, err := bot.GetMe()
@@ -88,8 +88,11 @@ fmt.Printf("Bot user: %+v\n", botUser)
 ```
 
 > Good practice to check bot info before starting the main bot functionality.
-> This works as a kind of healthcheck (see [configuration](/docs/introduction/configuration) for more).
+> This works as a kind of healthcheck (see [configuration](/content/docs/introduction/configuration.md) for more).
 
 ## Getting updates
 
-...
+Telegram provides two ways to get updates: long pulling and webhook.
+In this section we will look at how to get updates using long pulling. 
+This method is easies for testing since it does not require you to have a public domain or IP with HTTPS support,
+more on getting updates via webhook [here](/content/docs/helpers/updates-webhook.md)

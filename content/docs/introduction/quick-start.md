@@ -42,8 +42,8 @@ Get Telego with `go get`.
 go get -u github.com/mymmrac/telego
 ```
 
-Import Telego packages. More about [handlers](/docs/handlers/handlers-basics) and
-[utils](/docs/utilities/utilities-basics).
+Import Telego packages. More about [handlers](/content/docs/handlers/handlers-basics.md) and
+[utils](/content/docs/utilities/utilities-basics.md).
 
 ```go
 import (
@@ -57,7 +57,7 @@ import (
 ```
 
 Create a bot instance and specify optional settings.
-More about [configuration](/docs/introduction/configuration) options.
+More about [configuration](/content/docs/introduction/configuration.md) options.
 
 ```go
 botToken := os.Getenv("TOKEN")
@@ -74,7 +74,7 @@ if err != nil {
 > It's not recommended to hardcode tokens, so the environment variable was used.
 > Also, both error and debug logs were enabled.
 
-Get and print bot info. More about [methods](/docs/methods/methods-basics).
+Get and print bot info. More about [methods](/content/docs/methods/methods-basics.md).
 
 ```go
 botUser, err := bot.GetMe()
@@ -88,7 +88,7 @@ fmt.Printf("Bot user: %+v\n", botUser)
 
 > If everything was properly configured, you should see your bot user printed.
 
-Get updates from Telegram via long pulling (not recommend, more [here](/docs/helpers/updates-long-pulling)).
+Get updates from Telegram via long pulling (not recommend, more [here](/content/docs/helpers/updates-long-pulling.md)).
 
 ```go
 updates, _ := bot.UpdatesViaLongPulling(nil)
@@ -97,7 +97,7 @@ defer bot.StopLongPulling()
 ```
 
 Create bot handler, register new message handler and start handling updates. More about
-[methods](docs/methods/methods-basics) and [handlers](/docs/handlers/handlers-basics).
+[methods](/content/docs/methods/methods-basics.md) and [handlers](/content/docs/handlers/handlers-basics.md).
 
 ```go
 bh, _ := th.NewBotHandler(bot, updates)
@@ -172,7 +172,7 @@ func main() {
 ## Next steps
 
 For more information, keep reading the next sections of docs. 
-In [tutorial](/docs/introduction/tutorial),
+In [tutorial](/content/docs/introduction/tutorial.md),
 the same example will be reviewed more closely with different ways to do things.
 
 Most of the things you will need to know can be found in a [Telegram Bot API](https://core.telegram.org/bots/api) and/or
