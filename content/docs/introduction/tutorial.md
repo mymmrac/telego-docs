@@ -207,4 +207,73 @@ bh.HandleMessage(func(bot *telego.Bot, message telego.Message) {
 
 ## Using Telegram methods
 
+Since now, you should know how to get updates, it's time to use some Telegram methods to make your bot interactive.
+Let's just send your message back to you, essentially make an echo bot.
+Telego provides one-to-one representation of all the methods Telegram provides with respectful parameters.
+
+```go
+bh.HandleMessage(func(bot *telego.Bot, message telego.Message) {
+    chatID := message.Chat.ID
+    sentMessage, err := bot.SendMessage(&SendMessageParams{
+        ChatID: telego.ChatID{ID: chatID},
+        Text:   message.Text,
+    })
+    // ...
+})
+```
+
+Here we took chat ID of the message that came from the user and sent a message with the same text back to the same chat.
+
+> Telegram provides two ways to specify chat ID: as chat ID (`int64`) or as username (`string`),
+> so Telego provides specific type for that -`telego.ChatID` which has `ID` and `Username` fields that are mutually
+> exclusive.
+
+Since we are build echo bot,
+sending only text messages isn't sufficient
+(if you will send an image, for example, this will not work since our new message only contains text),
+so we can send a copy of the message:
+
+```go
+// Handle updates ...
+chatID := telego.ChatID(ID: message.Chat.ID)
+sentMessageID, err := bot.CopyMessage(&telego.CopyMessageParams{
+    ChatID:     chatID,
+    FromChatID: chatID,
+    MessageID:  message.MessageID,
+})
+```
+
+> In this case `CopyMessage` will send back any message, it does not matter if its text, photo or voice message.
+
+### Using Telego utils
+
+Some common methods like sending messages, answering callback queries or
+[other](/content/docs/utilities/utilities-basics.md) have utility methods that will help you easily call methods.
+To use them, import `telegoutil` package with alias `tu` for cleaner code:
+
+```go
+import tu "github.com/mymmrac/telego/telegoutil"
+```
+
+For creating chat IDs, there are two methods:
+
+```go
+chatID := tu.ID(1234567)
+// Or
+chatID := tu.Username("@telegram")
+```
+
+For sending messages, you can use:
+
+```go
+_, err := bot.SendMessage(tu.Message(tu.ID(1234567), "Hello Telego!"))
+// Or to copy message
+chatID := tu.ID(message.Chat.ID)
+_, err := bot.CopyMessage(tu.CopyMessage(chatID, chatID, message.MessageID))
+```
+
+There are many more utils to use, see [here](/content/docs/utilities/utilities-basics.md).
+
+### Using `With...` methods
+
 ...
