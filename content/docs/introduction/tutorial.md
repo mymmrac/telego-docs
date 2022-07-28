@@ -217,7 +217,7 @@ Telego provides one-to-one representation of all the methods Telegram provides w
 ```go
 bh.HandleMessage(func(bot *telego.Bot, message telego.Message) {
     chatID := message.Chat.ID
-    sentMessage, err := bot.SendMessage(&SendMessageParams{
+    sentMessage, err := bot.SendMessage(&telego.SendMessageParams{
         ChatID: telego.ChatID{ID: chatID},
         Text:   message.Text,
     })
@@ -238,7 +238,7 @@ so we can send a copy of the message:
 
 ```go
 // Handle updates ...
-chatID := telego.ChatID(ID: message.Chat.ID)
+chatID := telego.ChatID{ ID: message.Chat.ID }
 sentMessageID, err := bot.CopyMessage(&telego.CopyMessageParams{
     ChatID:     chatID,
     FromChatID: chatID,
