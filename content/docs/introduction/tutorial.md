@@ -112,7 +112,10 @@ This will get you a slice of current updates, but to get new updates you should 
 ```go
 offset := 0
 for {
-    updates, err := bot.GetUpdates(&telego.GetUpdatesParams{ Offset: offset, Timeout: 5 })
+    updates, err := bot.GetUpdates(&telego.GetUpdatesParams{
+        Offset: offset,
+        Timeout: 5,
+    })
     // Handle error ...
     
     offset = updates[len(updates) - 1].UpdateID + 1
@@ -248,7 +251,8 @@ sentMessageID, err := bot.CopyMessage(&telego.CopyMessageParams{
 ### Using Telego utils
 
 Some common methods like sending messages, answering callback queries or
-[other](/content/docs/utilities/utilities-basics.md) have utility methods that will help you easily call methods.
+[other](/content/docs/utilities/utilities-basics.md) have utility methods
+that will help you easily call methods with all required parameters set by arguments.
 To use them, import `telegoutil` package with alias `tu` for cleaner code:
 
 ```go
@@ -276,4 +280,68 @@ There are many more utils to use, see [here](/content/docs/utilities/utilities-b
 
 ### Using `With...` methods
 
-...
+Let's try to send inline keyboard using utility methods:
+
+```go
+_, err := bot.SendMessage(&telego.SendMessageParams{
+    ChatID: tu.ID(1234567),
+    Text: "Awesome Keyboard",
+    ReplyMarkup: tu.InlineKeyboard(
+        tu.InlineKeyboardRow(
+            telego.InlineKeyboardButton{ 
+                Text: "Callback",
+                CallbackData: "data",
+            },
+            telego.InlineKeyboardButton{
+                Text: "URL",
+                URL: "https://example.com",
+            },
+        ),
+        tu.InlineKeyboardRow(
+            telego.InlineKeyboardButton{
+                Text: "Switch to Inline",
+                SwitchInlineQueryCurrentChat: "telego",
+            },
+        ),
+    ),
+})
+```
+
+> Here `telego.InlineKeyboardButton` has one required parameter (`text`) and exactly on of optional parameters should
+> be set, callback data, URL, etc.
+
+As you can see using only Telego utils, you can do everything,
+but it's still not ideal solution;
+that's why you can try to use `With...` methods in combination with utils,
+they allow you to modify parameters without creating explicit variables or using struct literals:
+
+```go
+// ...
+ReplyMarkup: tu.InlineKeyboard(
+    tu.InlineKeyboardRow(
+        tu.InlineKeyboardButton("Callback").WithCallbackData("data"),
+        tu.InlineKeyboardButton("URL").WithURL("https://example.com"),
+    ),
+    tu.InlineKeyboardRow(
+        tu.InlineKeyboardButton("Switch to Inline").
+            WithSwitchInlineQueryCurrentChat("telego"),
+    ),
+),
+// ...
+```
+
+You can also chain `With...` methods to fill more than one parameter,
+more on them [here](/content/docs/helpers/with-like-methods.md).
+
+## Conclusions & next steps
+
+This tutorial should give you a general overview of Telego features and what you can do with bots,
+some links for more investigation and knowledge of what can be used.
+I highly recommend reading [levels](/content/docs/levels/_index.md) section of the docs
+to understand how you can utilize Telego features and capabilities and
+[configuration](/content/docs/introduction/configuration.md)
+to get the idea what you can modify and change for your needs.
+Reading about [updates via webhook](/content/docs/helpers/updates-webhook.md) will also be useful for production ready
+bots.
+
+Explore all other features of Telego and enjoy building your bots.
