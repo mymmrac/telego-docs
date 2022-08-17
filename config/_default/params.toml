@@ -9,7 +9,7 @@ description = "Telego is Telegram Bot API library for Go with full one-to-one AP
 ## Open Graph
 images = ["Telego-long.png"]
 ogLocale = "en_US"
-domainTLD = "mymmrac.github.io/telego-docs"
+domainTLD = "telego.ml"
 titleHome = "Telego"
 
 ## Twitter Cards
