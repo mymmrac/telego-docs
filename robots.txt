@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mymmrac.github.io/telego-docs/sitemap.xml
+Sitemap: https://telego.ml/sitemap.xml
