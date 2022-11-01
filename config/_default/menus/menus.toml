@@ -3,10 +3,11 @@ name = "Docs"
 url = "/docs/introduction/overview"
 weight = 10
 
-[[main]]
-name = "Blog"
-url = "/blog"
-weight = 20
+# TODO: Enable once needed
+#[[main]]
+#name = "Blog"
+#url = "/blog"
+#weight = 20
 
 [[main]]
 name = "Get Started"
