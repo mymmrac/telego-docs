@@ -75,4 +75,3 @@ These are options that can be passed as optional arguments to `telego.NewBot`  a
 > options (e.g. all options related to logger will override each other).
 
 [//]: # (TODO: Add alert here)
-
