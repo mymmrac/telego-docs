@@ -21,9 +21,9 @@ Most common way to implement it is to use `signal.Notify` function. First, impor
 
 ```go
 import (
-"os"
-"os/signal"
-"syscall"
+    "os"
+    "os/signal"
+    "syscall"
 )
 ```
 
@@ -68,50 +68,50 @@ Wait for the stop process to be completed.
 package main
 
 import (
-	"fmt"
-	"os"
-	"os/signal"
-	"syscall"
-	"time"
+    "fmt"
+    "os"
+    "os/signal"
+    "syscall"
+    "time"
 
-	"github.com/mymmrac/telego"
+    "github.com/mymmrac/telego"
 )
 
 func main() {
-	botToken := os.Getenv("TOKEN")
+    botToken := os.Getenv("TOKEN")
 
-	bot, err := telego.NewBot(botToken, telego.WithDefaultDebugLogger())
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
+    bot, err := telego.NewBot(botToken, telego.WithDefaultDebugLogger())
+    if err != nil {
+        fmt.Println(err)
+        os.Exit(1)
+    }
 
-	sigs := make(chan os.Signal, 1)
-	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+    sigs := make(chan os.Signal, 1)
+    signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
 
-	done := make(chan struct{}, 1)
+    done := make(chan struct{}, 1)
 
-	updates, _ := bot.UpdatesViaLongPulling(nil)
+    updates, _ := bot.UpdatesViaLongPulling(nil)
 
-	for update := range updates {
-		fmt.Println("Processing update:", update.UpdateID)
-		time.Sleep(time.Second * 5) // Simulate long process time
-		fmt.Println("Done update:", update.UpdateID)
-	}
+    for update := range updates {
+        fmt.Println("Processing update:", update.UpdateID)
+        time.Sleep(time.Second * 5) // Simulate long process time
+        fmt.Println("Done update:", update.UpdateID)
+    }
 
-	go func() {
-		<-sigs
+    go func() {
+        <-sigs
 
-		fmt.Println("Stopping...")
+        fmt.Println("Stopping...")
 
-		bot.StopLongPulling()
-		fmt.Println("Long pulling done")
+        bot.StopLongPulling()
+        fmt.Println("Long pulling done")
 
-		done <- struct{}{}
-	}()
+        done <- struct{}{}
+    }()
 
-	<-done
-	fmt.Println("Done")
+    <-done
+    fmt.Println("Done")
 }
 ```
 
@@ -131,59 +131,59 @@ handler.
 package main
 
 import (
-	"fmt"
-	"os"
-	"os/signal"
-	"syscall"
-	"time"
+    "fmt"
+    "os"
+    "os/signal"
+    "syscall"
+    "time"
 
-	"github.com/mymmrac/telego"
-	th "github.com/mymmrac/telego/telegohandler"
+    "github.com/mymmrac/telego"
+    th "github.com/mymmrac/telego/telegohandler"
 )
 
 func main() {
-	botToken := os.Getenv("TOKEN")
+    botToken := os.Getenv("TOKEN")
 
-	bot, err := telego.NewBot(botToken, telego.WithDefaultDebugLogger())
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
+    bot, err := telego.NewBot(botToken, telego.WithDefaultDebugLogger())
+    if err != nil {
+        fmt.Println(err)
+        os.Exit(1)
+    }
 
-	sigs := make(chan os.Signal, 1)
-	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+    sigs := make(chan os.Signal, 1)
+    signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
 
-	done := make(chan struct{}, 1)
+    done := make(chan struct{}, 1)
 
-	updates, _ := bot.UpdatesViaLongPulling(nil)
+    updates, _ := bot.UpdatesViaLongPulling(nil)
 
-	bh, _ := th.NewBotHandler(bot, updates, th.WithStopTimeout(time.Second*10))
+    bh, _ := th.NewBotHandler(bot, updates, th.WithStopTimeout(time.Second*10))
 
-	bh.Handle(func(bot *telego.Bot, update telego.Update) {
-		fmt.Println("Processing update:", update.UpdateID)
-		time.Sleep(time.Second * 5) // Simulate long process time
-		fmt.Println("Done update:", update.UpdateID)
-	})
+    bh.Handle(func(bot *telego.Bot, update telego.Update) {
+        fmt.Println("Processing update:", update.UpdateID)
+        time.Sleep(time.Second * 5) // Simulate long process time
+        fmt.Println("Done update:", update.UpdateID)
+    })
 
-	go func() {
-		<-sigs
+    go func() {
+        <-sigs
 
-		fmt.Println("Stopping...")
+        fmt.Println("Stopping...")
 
-		bot.StopLongPulling()
-		fmt.Println("Long pulling done")
+        bot.StopLongPulling()
+        fmt.Println("Long pulling done")
 
-		bh.Stop()
-		fmt.Println("Bot handler done")
+        bh.Stop()
+        fmt.Println("Bot handler done")
 
-		done <- struct{}{}
-	}()
+        done <- struct{}{}
+    }()
 
-	go bh.Start()
-	fmt.Println("Handling updates...")
+    go bh.Start()
+    fmt.Println("Handling updates...")
 
-	<-done
-	fmt.Println("Done")
+    <-done
+    fmt.Println("Done")
 }
 ```
 
@@ -203,62 +203,62 @@ a non-blocking function) and also stop of webhook before stopping bot handler.
 package main
 
 import (
-	"fmt"
-	"os"
-	"os/signal"
-	"syscall"
-	"time"
+    "fmt"
+    "os"
+    "os/signal"
+    "syscall"
+    "time"
 
-	"github.com/mymmrac/telego"
-	th "github.com/mymmrac/telego/telegohandler"
+    "github.com/mymmrac/telego"
+    th "github.com/mymmrac/telego/telegohandler"
 )
 
 func main() {
-	botToken := os.Getenv("TOKEN")
+    botToken := os.Getenv("TOKEN")
 
-	bot, err := telego.NewBot(botToken, telego.WithDefaultDebugLogger())
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
+    bot, err := telego.NewBot(botToken, telego.WithDefaultDebugLogger())
+    if err != nil {
+        fmt.Println(err)
+        os.Exit(1)
+    }
 
-	sigs := make(chan os.Signal, 1)
-	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+    sigs := make(chan os.Signal, 1)
+    signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
 
-	done := make(chan struct{}, 1)
+    done := make(chan struct{}, 1)
 
-	updates, _ := bot.UpdatesViaWebhook("/bot" + bot.Token())
+    updates, _ := bot.UpdatesViaWebhook("/bot" + bot.Token())
 
-	bh, _ := th.NewBotHandler(bot, updates, th.WithStopTimeout(time.Second*10))
+    bh, _ := th.NewBotHandler(bot, updates, th.WithStopTimeout(time.Second*10))
 
-	// Handle updates
-	bh.Handle(func(bot *telego.Bot, update telego.Update) {
-		fmt.Println("Processing update:", update.UpdateID)
-		time.Sleep(time.Second * 5) // Simulate long process time
-		fmt.Println("Done update:", update.UpdateID)
-	})
+    // Handle updates
+    bh.Handle(func(bot *telego.Bot, update telego.Update) {
+        fmt.Println("Processing update:", update.UpdateID)
+        time.Sleep(time.Second * 5) // Simulate long process time
+        fmt.Println("Done update:", update.UpdateID)
+    })
 
-	go func() {
-		<-sigs
+    go func() {
+        <-sigs
 
-		fmt.Println("Stopping...")
+        fmt.Println("Stopping...")
 
-		_ = bot.StopWebhook()
-		fmt.Println("Webhook done")
+        _ = bot.StopWebhook()
+        fmt.Println("Webhook done")
 
-		bh.Stop()
-		fmt.Println("Bot handler done")
+        bh.Stop()
+        fmt.Println("Bot handler done")
 
-		done <- struct{}{}
-	}()
+        done <- struct{}{}
+    }()
 
-	go bh.Start()
-	fmt.Println("Handling updates...")
+    go bh.Start()
+    fmt.Println("Handling updates...")
 
-	_ = bot.StartListeningForWebhook("localhost:443")
+    _ = bot.StartListeningForWebhook("localhost:443")
 
-	<-done
-	fmt.Println("Done")
+    <-done
+    fmt.Println("Done")
 }
 ```
 
