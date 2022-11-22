@@ -22,11 +22,12 @@ By design, default values that are used when no options are provided,
 considered to be a good starting point, but if you want to get most out of Telego it is strongly recommended to check
 what can be configured and decide for your current project what is the best.
 
-There are two main ways to configure your setup:
+There are three main ways to configure your setup:
 
 - Bot options
 - [Long pulling](/content/docs/helpers/updates-long-pulling.md) / [Webhook](/content/docs/helpers/updates-webhook.md)
   helper options
+- [Bot handler](/content/docs/handlers/handlers-basics.md) options
 
 {{< alert icon="⚠️" text="Order of options is important." />}}
 
@@ -125,3 +126,13 @@ List of options:
 - `WithWebhookHealthAPI`
     - Basic health API on GET `/health` path of the router
     - Default: disabled
+
+### Bot handler options
+
+These are options that can be passed as optional arguments to `th.NewBotHandler` after bot and updates chan.
+
+List of options:
+
+- `WithStopTimeout`
+  - Wait for updates to be processed for specified time
+  - Default: 0s (stop immediately)
