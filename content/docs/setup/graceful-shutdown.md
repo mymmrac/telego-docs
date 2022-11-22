@@ -43,13 +43,13 @@ Handle stop signal (e.g. Ctrl+C) and stop any running tasks.
 
 ```go
 go func () {
-// Wait for stop signal
-<-sigs
-
-// Stop any tasks here ...
-
-// Notify that stop is done
-done <- struct{}{}
+    // Wait for stop signal
+    <-sigs
+    
+    // Stop any tasks here ...
+    
+    // Notify that stop is done
+    done <- struct{}{}
 }()
 ```
 
