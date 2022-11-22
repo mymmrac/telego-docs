@@ -231,7 +231,6 @@ func main() {
 
     bh, _ := th.NewBotHandler(bot, updates, th.WithStopTimeout(time.Second*10))
 
-    // Handle updates
     bh.Handle(func(bot *telego.Bot, update telego.Update) {
         fmt.Println("Processing update:", update.UpdateID)
         time.Sleep(time.Second * 5) // Simulate long process time
