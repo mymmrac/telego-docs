@@ -8,25 +8,38 @@ draft: false
 images: []
 menu:
 docs:
-parent: "introduction"
-weight: 104
+parent: "setup"
+weight: 151
 toc: true
 ---
 
-## What can be configured?
+## Configuration and default values
 
 Telego does not provide a large set of things that can be configured, but still you can set some low-level things
 starting from the bot API server and ending with your own API caller.
 
-There are two ways to configure your setup:
+By design, default values that are used when no options are provided,
+considered to be a good starting point, but if you want to get most out of Telego it is strongly recommended to check
+what can be configured and decide for your current project what is the best.
+
+There are two main ways to configure your setup:
 
 - Bot options
 - [Long pulling](/content/docs/helpers/updates-long-pulling.md) / [Webhook](/content/docs/helpers/updates-webhook.md)
   helper options
 
+{{< alert icon="⚠️" text="Order of options is important." />}}
+
+Some options override the same values as others, so it is important to use only one option from "group" of options (e.g.
+all options related to logger will override each other).
+
 ### Bot options
 
 These are options that can be passed as optional arguments to `telego.NewBot`  after bot token.
+
+Most useful of them are: `WithHealthCheck`, `WithLogger`, `WithAPIServer`, `WithEmptyValues`.
+
+Full list of Bot options:
 
 - `WithAPIServer`
     - Change bot API server URL (reason why to do
@@ -71,7 +84,44 @@ These are options that can be passed as optional arguments to `telego.NewBot`  a
       files) requests
     - Default: `telegoapi.DefaultConstructor`
 
-> Note: Some options override the same values as others, so it is important to use only one option from "group" of
-> options (e.g. all options related to logger will override each other).
+### Long pulling options
 
-[//]: # (TODO: Add alert here)
+These are options that can be passed as optional arguments to `telego.Bot.UpdatesViaLongPulling` after `getUpdates`
+parameters.
+
+List of options:
+
+- `WithLongPullingUpdateInterval`
+    - Update interval for long pulling, ensure that between two calls of `telego.Bot.GetUpdates` will be at least
+      specified time, but it could be longer
+    - Default: 0.5s
+    - **Note**: Telegram has built in a timeout mechanism, to properly use it set `telego.GetUpdatesParams.Timeout` to
+      desired timeout and update interval to 0 (recommended way)
+- `WithLongPullingRetryTimeout`
+    - Interval before trying to get updates after an error
+    - Default: 3s
+- `WithLongPullingBuffer`
+    - Buffer size of update chan that will be returned
+    - Default: 100
+
+### Webhook options
+
+These are options that can be passed as optional arguments to `telego.Bot.UpdatesViaWebhook` after `getUpdates`
+parameters.
+
+List of options:
+
+- `WithWebhookServer`
+    - FastHTTP server to use for webhook listening
+    - Default: `&fasthttp.Server{}`
+- `WithWebhookRouter`
+    - FastHTTP router to use with webhook (from [`fasthttp/router`](https://github.com/fasthttp/router))
+    - Default: `router.New()`
+    - **Note**: For webhook to work properly POST route with a path specified in `telego.Bot.UpdatesViaWebhook` must be
+      unset
+- `WithWebhookBuffer`
+    - Buffer size of update chan that will be returned
+    - Default: 100
+- `WithWebhookHealthAPI`
+    - Basic health API on GET `/health` path of the router
+    - Default: disabled

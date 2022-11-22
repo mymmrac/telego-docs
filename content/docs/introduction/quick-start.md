@@ -57,7 +57,7 @@ import (
 ```
 
 Create a bot instance and specify optional settings.
-More about [configuration](/content/docs/introduction/configuration.md) options.
+More about [configuration](/content/docs/setup/configuration.md) options.
 
 ```go
 botToken := os.Getenv("TOKEN")

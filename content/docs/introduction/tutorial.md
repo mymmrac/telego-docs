@@ -63,7 +63,7 @@ if err != nil {
 ```
 
 For this tutorial, let's enable debug logs by adding bot options.
-More about [configuration](/content/docs/introduction/configuration.md).
+More about [configuration](/content/docs/setup/configuration.md).
 
 ```go
 bot, err := telego.NewBot(botToken, telego.WithDefaultDebugLogger())
@@ -88,7 +88,7 @@ fmt.Printf("Bot user: %+v\n", botUser)
 ```
 
 > Good practice to check bot info before starting the main bot functionality.
-> This works as a kind of healthcheck (see [configuration](/content/docs/introduction/configuration.md) for more).
+> This works as a kind of healthcheck (see [configuration](/content/docs/setup/configuration.md) for more).
 
 ## Getting updates
 
@@ -337,9 +337,9 @@ more on them [here](/content/docs/helpers/with-like-methods.md).
 
 This tutorial should give you a general overview of Telego features and what you can do with bots,
 some links for more investigation and knowledge of what can be used.
-I highly recommend reading [levels](/content/docs/levels/_index.md) section of the docs
+It is highly recommended to read [levels](/content/docs/levels/_index.md) section of the docs
 to understand how you can utilize Telego features and capabilities and
-[configuration](/content/docs/introduction/configuration.md)
+[configuration](/content/docs/setup/configuration.md)
 to get the idea what you can modify and change for your needs.
 Reading about [updates via webhook](/content/docs/helpers/updates-webhook.md) will also be useful for production ready
 bots.
