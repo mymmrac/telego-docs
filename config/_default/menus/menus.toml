@@ -38,10 +38,11 @@ pre = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" view
 url = "https://github.com/mymmrac/telego"
 weight = 10
 
-[[footer]]
-name = "Contributors"
-url = "/contributors"
-weight = 10
+# TODO: Enable once needed
+#[[footer]]
+#name = "Contributors"
+#url = "/contributors"
+#weight = 10
 
 [[footer]]
 name = "Contact"
