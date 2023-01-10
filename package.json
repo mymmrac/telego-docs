@@ -27,7 +27,7 @@
         "lint:markdown": "markdownlint-cli2 \"*.md\" \"content/**/*.md\""
     },
     "devDependencies": {
-        "@babel/cli": "^7.19",
+        "@babel/cli": "^7.20",
         "@babel/core": "^7.20.5",
         "@babel/preset-env": "^7.20.2",
         "@fullhuman/postcss-purgecss": "^5.0",
