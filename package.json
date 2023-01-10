@@ -42,7 +42,7 @@
         "instant.page": "^5.1",
         "katex": "^0.16.3",
         "lazysizes": "^5.3",
-        "markdownlint-cli2": "^0.5.1",
+        "markdownlint-cli2": "^0.6.0",
         "mermaid": "^9.2.2",
         "node-fetch": "^3.3.0",
         "postcss": "^8.4.19",
