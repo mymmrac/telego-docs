@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://telego.ml/sitemap.xml
+Sitemap: https://telego.pixelbox.dev/sitemap.xml
