@@ -1,6 +1,6 @@
 # Telego Docs
 
-[![Telego Docs](https://img.shields.io/static/v1?label=Telego&message=docs&color=8ed6fb&logo=hugo)](https://telego.ml)
+[![Telego Docs](https://img.shields.io/static/v1?label=Telego&message=docs&color=8ed6fb&logo=hugo)](https://telego.pixelbox.dev)
 <br>
 [![Deploy Status](https://github.com/mymmrac/telego-docs/actions/workflows/deploy-github.yml/badge.svg)](https://github.com/mymmrac/telego-docs/actions/workflows/deploy-github.yml)
 [![CI Status](https://github.com/mymmrac/telego-docs/actions/workflows/ci.yml/badge.svg)](https://github.com/mymmrac/telego-docs/actions/workflows/ci.yml)
