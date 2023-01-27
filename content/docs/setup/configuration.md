@@ -105,7 +105,7 @@ List of options:
     - Buffer size of update chan that will be returned
     - Default: 100
 
-> If `telego.GetUpdatesParams` passed into `bot.UpdatesViaLongPooling` as nil, then default timeout of 8s will be
+> If `telego.GetUpdatesParams` passed into `bot.UpdatesViaLongPolling` as nil, then default timeout of 8s will be
 > applied, unless explicitly specified using non-nil parameter
 
 ### Webhook options
