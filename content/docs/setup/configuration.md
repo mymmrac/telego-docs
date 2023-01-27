@@ -69,6 +69,8 @@ Full list of Bot options:
     - By default, Telego uses [`valyala/fasthttp`](https://github.com/valyala/fasthttp) and you can specify your own
       client that will be to make requests
     - Default: `&fasthttp.Client{}`
+- `WithHTTPClient`
+  - Alternative to a fasthttp client you can use a client from `net/http`
 - `WithEmptyValues`
     - Used in combination with `telego.Bot.EmptyValue()` to get empty values for string parameters in cases where
       empty parameter is a valid value
