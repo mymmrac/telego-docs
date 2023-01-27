@@ -95,15 +95,18 @@ List of options:
 - `WithLongPollingUpdateInterval`
     - Update interval for long polling, ensure that between two calls of `telego.Bot.GetUpdates` will be at least
       specified time, but it could be longer
-    - Default: 0.5s
-    - **Note**: Telegram has built in a timeout mechanism, to properly use it set `telego.GetUpdatesParams.Timeout` to
-      desired timeout and update interval to 0 (recommended way)
+    - Default: 0s
+    - **Note**: Telegram has built in a timeout mechanism, to properly use it, set `telego.GetUpdatesParams.Timeout` to
+      desired timeout and update interval to 0 (default, recommended way)
 - `WithLongPollingRetryTimeout`
     - Interval before trying to get updates after an error
-    - Default: 3s
+    - Default: 8s
 - `WithLongPollingBuffer`
     - Buffer size of update chan that will be returned
     - Default: 100
+
+> If `telego.GetUpdatesParams` passed into `bot.UpdatesViaLongPooling` as nil, then default timeout of 8s will be
+> applied, unless explicitly specified using non-nil parameter
 
 ### Webhook options
 
@@ -134,5 +137,5 @@ These are options that can be passed as optional arguments to `th.NewBotHandler`
 List of options:
 
 - `WithStopTimeout`
-  - Wait for updates to be processed for specified time
-  - Default: 0s (stop immediately)
+    - Wait for updates to be processed for specified time
+    - Default: 0s (stop immediately)
