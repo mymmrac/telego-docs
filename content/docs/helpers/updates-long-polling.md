@@ -1,7 +1,7 @@
 ---
-title: "Updates via Long Pulling"
-description: "Getting updates via long pulling using helper func."
-lead: "Getting updates via long pulling using helper func."
+title: "Updates via Long Polling"
+description: "Getting updates via long polling using helper func."
+lead: "Getting updates via long polling using helper func."
 date: 2022-02-14T22:25:26+02:00
 lastmod: 2022-02-14T22:25:26+02:00
 draft: false

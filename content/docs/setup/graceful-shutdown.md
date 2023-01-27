@@ -91,7 +91,7 @@ func main() {
 
     done := make(chan struct{}, 1)
 
-    updates, _ := bot.UpdatesViaLongPulling(nil)
+    updates, _ := bot.UpdatesViaLongPolling(nil)
 
     for update := range updates {
         fmt.Println("Processing update:", update.UpdateID)
@@ -104,8 +104,8 @@ func main() {
 
         fmt.Println("Stopping...")
 
-        bot.StopLongPulling()
-        fmt.Println("Long pulling done")
+        bot.StopLongPolling()
+        fmt.Println("Long polling done")
 
         done <- struct{}{}
     }()
@@ -120,7 +120,7 @@ func main() {
 Code with all comments also available on
 GitHub [here](https://github.com/mymmrac/telego/blob/main/examples/graceful_shutdown_no_helpers/main.go).
 
-## Long pulling example
+## Long polling example
 
 Basically the same as first example, but we need to start handler in goroutine and also call `bh.Stop` inside stop
 handler.
@@ -155,7 +155,7 @@ func main() {
 
     done := make(chan struct{}, 1)
 
-    updates, _ := bot.UpdatesViaLongPulling(nil)
+    updates, _ := bot.UpdatesViaLongPolling(nil)
 
     bh, _ := th.NewBotHandler(bot, updates, th.WithStopTimeout(time.Second*10))
 
@@ -170,8 +170,8 @@ func main() {
 
         fmt.Println("Stopping...")
 
-        bot.StopLongPulling()
-        fmt.Println("Long pulling done")
+        bot.StopLongPolling()
+        fmt.Println("Long polling done")
 
         bh.Stop()
         fmt.Println("Bot handler done")
@@ -190,7 +190,7 @@ func main() {
 {{</details>}}
 
 Code with all comments also available on
-GitHub [here](https://github.com/mymmrac/telego/blob/main/examples/graceful_shutdown_long_pulling/main.go).
+GitHub [here](https://github.com/mymmrac/telego/blob/main/examples/graceful_shutdown_long_polling/main.go).
 
 ## Webhook example
 

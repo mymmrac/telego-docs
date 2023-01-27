@@ -88,12 +88,12 @@ fmt.Printf("Bot user: %+v\n", botUser)
 
 > If everything was properly configured, you should see your bot user printed.
 
-Get updates from Telegram via long pulling (not recommend, more [here](/content/docs/helpers/updates-long-pulling.md)).
+Get updates from Telegram via long polling (not recommend, more [here](/content/docs/helpers/updates-long-polling.md)).
 
 ```go
-updates, _ := bot.UpdatesViaLongPulling(nil)
+updates, _ := bot.UpdatesViaLongPolling(nil)
 // ...
-defer bot.StopLongPulling()
+defer bot.StopLongPolling()
 ```
 
 Create bot handler, register new message handler and start handling updates. More about
@@ -149,7 +149,7 @@ func main() {
 
     fmt.Printf("Bot user: %+v\n", botUser)
 
-    updates, _ := bot.UpdatesViaLongPulling(nil)
+    updates, _ := bot.UpdatesViaLongPolling(nil)
 
     bh, _ := th.NewBotHandler(bot, updates)
 
@@ -161,7 +161,7 @@ func main() {
     })
 
     defer bh.Stop()
-    defer bot.StopLongPulling()
+    defer bot.StopLongPolling()
 
     bh.Start()
 }

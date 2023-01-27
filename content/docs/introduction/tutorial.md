@@ -92,8 +92,8 @@ fmt.Printf("Bot user: %+v\n", botUser)
 
 ## Getting updates
 
-Telegram provides two ways to get updates: long pulling and webhook.
-In this section we will look at how to get updates using [long pulling](/content/docs/helpers/updates-long-pulling.md).
+Telegram provides two ways to get updates: long polling and webhook.
+In this section we will look at how to get updates using [long polling](/content/docs/helpers/updates-long-polling.md).
 This method is easies for testing since it does not require you to have a public domain or IP with HTTPS support,
 more on getting updates via webhook [here](/content/docs/helpers/updates-webhook.md).
 
@@ -132,16 +132,16 @@ also it will handle updating offset to proper one and retries in case of failure
 
 ```go
 // Returns <-chan telego.Update
-updates, err := bot.UpdatesViaLongPulling(nil)
+updates, err := bot.UpdatesViaLongPolling(nil)
 ```
 
 To stop getting updates, you should call stop method:
 
 ```go
-bot.StopLongPulling()
+bot.StopLongPolling()
 ```
 
-> More on getting updates via long pulling with helper [here](/content/docs/helpers/updates-long-pulling.md).
+> More on getting updates via long polling with helper [here](/content/docs/helpers/updates-long-polling.md).
 
 ## Processing updates
 

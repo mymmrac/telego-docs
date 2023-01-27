@@ -25,7 +25,7 @@ what can be configured and decide for your current project what is the best.
 There are three main ways to configure your setup:
 
 - Bot options
-- [Long pulling](/content/docs/helpers/updates-long-pulling.md) / [Webhook](/content/docs/helpers/updates-webhook.md)
+- [Long polling](/content/docs/helpers/updates-long-polling.md) / [Webhook](/content/docs/helpers/updates-webhook.md)
   helper options
 - [Bot handler](/content/docs/handlers/handlers-basics.md) options
 
@@ -85,23 +85,23 @@ Full list of Bot options:
       files) requests
     - Default: `telegoapi.DefaultConstructor`
 
-### Long pulling options
+### Long polling options
 
-These are options that can be passed as optional arguments to `telego.Bot.UpdatesViaLongPulling` after `getUpdates`
+These are options that can be passed as optional arguments to `telego.Bot.UpdatesViaLongPolling` after `getUpdates`
 parameters.
 
 List of options:
 
-- `WithLongPullingUpdateInterval`
-    - Update interval for long pulling, ensure that between two calls of `telego.Bot.GetUpdates` will be at least
+- `WithLongPollingUpdateInterval`
+    - Update interval for long polling, ensure that between two calls of `telego.Bot.GetUpdates` will be at least
       specified time, but it could be longer
     - Default: 0.5s
     - **Note**: Telegram has built in a timeout mechanism, to properly use it set `telego.GetUpdatesParams.Timeout` to
       desired timeout and update interval to 0 (recommended way)
-- `WithLongPullingRetryTimeout`
+- `WithLongPollingRetryTimeout`
     - Interval before trying to get updates after an error
     - Default: 3s
-- `WithLongPullingBuffer`
+- `WithLongPollingBuffer`
     - Buffer size of update chan that will be returned
     - Default: 100
 

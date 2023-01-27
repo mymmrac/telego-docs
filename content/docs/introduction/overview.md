@@ -22,7 +22,7 @@ in [Telegram API](https://core.telegram.org/bots/api) with as small as possible 
 Telego provides almost all comments and descriptions in [godoc](https://pkg.go.dev/github.com/mymmrac/telego).
 
 Since using bare methods and types is not so convenient, Telego gives you a lot
-of [helpers](/content/docs/helpers/updates-long-pulling.md),
+of [helpers](/content/docs/helpers/updates-long-polling.md),
 [utilities](/content/docs/utilities/utilities-basics.md),
 and even [update handlers](/content/docs/handlers/handlers-basics.md) with
 [predicates](/content/docs/handlers/predicates.md).
