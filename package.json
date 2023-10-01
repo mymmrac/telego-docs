@@ -42,14 +42,14 @@
         "instant.page": "^5.2",
         "katex": "^0.16.4",
         "lazysizes": "^5.3",
-        "markdownlint-cli2": "^0.6.0",
+        "markdownlint-cli2": "^0.10.0",
         "mermaid": "^10.0.2",
         "node-fetch": "^3.3.0",
         "postcss": "^8.4.21",
         "postcss-cli": "^10.1.0",
         "purgecss-whitelister": "^2.4",
-        "stylelint": "^14.16.1",
-        "stylelint-config-standard-scss": "^6.1.0"
+        "stylelint": "^15.10.3",
+        "stylelint-config-standard-scss": "^11.0.0"
     },
     "otherDependencies": {
         "hugo": "0.101.0"
