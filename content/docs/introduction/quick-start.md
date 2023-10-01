@@ -38,7 +38,7 @@ From that you can go further exploring Telegram bots.
 Get Telego with `go get`.
 
 ```shell
-go get -u github.com/mymmrac/telego
+go get github.com/mymmrac/telego
 ```
 
 Import Telego packages. More about [handlers](/content/docs/handlers/handlers-basics.md) and

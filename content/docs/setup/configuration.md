@@ -54,7 +54,7 @@ Full list of Bot options:
     - Configuration of default logger, enable printing debug information and errors
     - Default: `false` for debug, `true` for errors
 - `WithDefaultDebugLogger`
-    - Default logger with enabled debug logs
+    - Default: logger with enabled debug logs
 - `WithExtendedDefaultLogger`
     - Same as `WithDefaultLogger`, but allows you to specify `strings.Replacer` that will replace any string in logs
     - Default: if used default logger will replace bot token into `BOT_TOKEN`
@@ -85,6 +85,10 @@ Full list of Bot options:
     - You can also provide your own way of "constructing" requests for both regular (JSON) and multipart (key-value &
       files) requests
     - Default: `telegoapi.DefaultConstructor`
+- `WithTestServerPath`
+    - Use the test server API path instead of a regular API path
+    - Regular API (default): `https://<api-server>/bot<token>/<method-name>`
+    - Test API: `https://<api-server>/bot<token>/test/<method-name>`
 
 ### Long polling options
 
@@ -93,6 +97,9 @@ parameters.
 
 List of options:
 
+- `WithLongPollingContext`
+    - Specify context passed into each update when received
+    - Default: not set
 - `WithLongPollingUpdateInterval`
     - Update interval for long polling, ensure that between two calls of `telego.Bot.GetUpdates` will be at least
       specified time, but it could be longer
@@ -118,18 +125,15 @@ List of options:
 
 - `WithWebhookServer`
     - FastHTTP server to use for webhook listening
-    - Default: `&fasthttp.Server{}`
-- `WithWebhookRouter`
-    - FastHTTP router to use with webhook (from [`fasthttp/router`](https://github.com/fasthttp/router))
-    - Default: `router.New()`
-    - **Note**: For webhook to work properly POST route with a path specified in `telego.Bot.UpdatesViaWebhook` must be
-      unset
+    - Default: `&telego.FastHTTPWebhookServer`
+- `WithWebhookContext`
+    - Specify context passed into each update when received
+    - Default: not set
 - `WithWebhookBuffer`
     - Buffer size of update chan that will be returned
-    - Default: 100
-- `WithWebhookHealthAPI`
-    - Basic health API on GET `/health` path of the router
-    - Default: disabled
+    - Default: 128
+- `WithWebhookSet`
+    - Call `bot.SetWebhook` with specified `telego.SetWebhookParams` before starting the webhook
 
 ### Bot handler options
 
@@ -140,3 +144,6 @@ List of options:
 - `WithStopTimeout`
     - Wait for updates to be processed for specified time
     - Default: 0s (stop immediately)
+- `WithDone`
+    - Wait for a done message to stop bot handler
+    - Default: not set

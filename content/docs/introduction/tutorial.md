@@ -31,7 +31,7 @@ For more examples, visit examples folder in GitHub repo [here](https://github.co
 Get Telego with `go get`.
 
 ```shell
-go get -u github.com/mymmrac/telego
+go get github.com/mymmrac/telego
 ```
 
 Import `telego` and `os` (for getting bot token
