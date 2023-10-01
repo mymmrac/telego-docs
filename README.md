@@ -6,7 +6,7 @@
 [![CI Status](https://github.com/mymmrac/telego-docs/actions/workflows/ci.yml/badge.svg)](https://github.com/mymmrac/telego-docs/actions/workflows/ci.yml)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/mymmrac/telego/main/docs/Telego-long.png" alt="Telego logo" width="512px" style="border-radius: 12px;">
+  <img src="https://raw.githubusercontent.com/mymmrac/telego/main/docs/logo/telego-long.png" alt="Telego logo" width="512px" style="border-radius: 12px;">
 </p>
 
 This repository is used for documentation of [Telego](https://github.com/mymmrac/telego).
