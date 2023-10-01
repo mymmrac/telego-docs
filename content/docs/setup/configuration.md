@@ -3,9 +3,8 @@ title: "Configuration"
 description: "Configuration that Telego provides when creating bot."
 lead: "Configuration that Telego provides when creating bot."
 date: 2022-05-07T23:17:27+03:00
-lastmod: 2022-05-07T23:17:27+03:00
 draft: false
-images: []
+images: [ ]
 menu:
 docs:
 parent: "setup"
@@ -70,7 +69,7 @@ Full list of Bot options:
       client that will be to make requests
     - Default: `&fasthttp.Client{}`
 - `WithHTTPClient`
-  - Alternative to a fasthttp client you can use a client from `net/http`
+    - Alternative to a fasthttp client you can use a client from `net/http`
 - `WithEmptyValues`
     - Used in combination with `telego.Bot.EmptyValue()` to get empty values for string parameters in cases where
       empty parameter is a valid value

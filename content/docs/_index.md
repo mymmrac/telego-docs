@@ -3,9 +3,8 @@ title: "Docs"
 description: "Documentation of Telego."
 lead: "Documentation of Telego."
 date: 2022-02-13T10:10:44+02:00
-lastmod: 2022-02-13T10:10:44+02:00
 draft: false
-images: []
+images: [ ]
 weight: 10
 ---
 

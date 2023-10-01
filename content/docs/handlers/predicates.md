@@ -3,7 +3,6 @@ title: "Predicates"
 description: "Predicates provided by Telego for handlers."
 lead: "Predicates provided by Telego for handlers."
 date: 2022-02-14T22:43:20+02:00
-lastmod: 2022-02-14T22:43:20+02:00
 draft: false
 images: []
 menu:
@@ -13,4 +12,4 @@ weight: 602
 toc: true
 ---
 
-Hmm...
+TBD...
