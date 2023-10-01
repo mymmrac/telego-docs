@@ -195,6 +195,10 @@ body {
 
 .docs-navigation a {
     font-size: $font-size-base * 0.9;
+
+    .card-body {
+        color: $link-color;
+    }
 }
 
 @include media-breakpoint-up(lg) {
